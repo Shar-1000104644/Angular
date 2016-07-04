@@ -1,0 +1,69 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form>
+	<h4>Registro de madre</h4>
+		Nombre <input type="text" id="nombre_madre"><br>
+		Apellido <input type="text" id="apellido_madre"><br>
+		Edad <input type="text" id="edad_madre"><br>
+	<h4>Registro de padre</h4>
+		Nombre <input type="text" id="nombre_padre"><br>
+		Apellido <input type="text" id="apellido_padre"><br>
+		Edad <input type="text" id="edad_padre"><br>
+	<h4>Registro de hijo</h4>
+		Nombre <input type="text" id="nombre_hijo"><br>
+		Apellido <input type="text" id="apellido_hijo"><br>
+		Edad <input type="text" id="edad_hijo"><br>
+		<button type="button" name="Enviar" onclick="showInfo()"> REGISTRAR </button>
+	</form>
+	<div id="resultado">
+	</div>
+	<script type="text/javascript">
+
+	   function persona(nombre,apellido,edad){
+	   	this.nombre=nombre;
+	   	this.apellido=apellido;
+	   	this.edad=edad;
+	   	this.printHTML= function(){
+	   		// alert(this.nombre + ' ' + this.apellido)
+	   		document.getElementById('resultado').innerHTML= document.getElementById('resultado').innerHTML + '<br>' + this.nombre + ' ' + this.apellido + ' '+this.edad;
+	   	};
+	   }
+	   function showInfo(){
+
+	   // 	var madre = new persona(document.getElementById("nombre_madre").value,document.getElementById("apellido_madre").value,document.getElementById("edad_madre").value);
+
+	  	// var nombreMadre =document.getElementById("nombre_madre").value;
+	  	// var apelidoMadre =document.getElementById("apellido_madre").value;
+	  	// var edadMadre =document.getElementById("edad_madre").value;
+
+	  	// var madre = new persona (nombreMadre, apelidoMadre, edadMadre);
+
+	  	var madre = new persona();
+	  	madre.nombre =document.getElementById("nombre_madre").value;
+	  	madre.apellido=document.getElementById("apellido_madre").value;
+	  	madre.edad=document.getElementById("edad_madre").value;	  	
+
+	  	var padre = new persona();
+	  	padre.nombre =document.getElementById("nombre_padre").value;
+	  	padre.apellido=document.getElementById("apellido_padre").value;
+	  	padre.edad=document.getElementById("edad_padre").value; 	
+
+	  	var hijo = new persona();
+	  	hijo.nombre =document.getElementById("nombre_hijo").value;
+	  	hijo.apellido=document.getElementById("apellido_hijo").value;
+	  	hijo.edad=document.getElementById("edad_hijo").value;
+
+	  	// alert(madre.nombre + madre.edad);
+	  	madre.printHTML();
+	  	padre.printHTML();
+	  	hijo.printHTML();
+	   	
+	   }
+
+	</script>
+</body>
+</html>

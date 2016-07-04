@@ -1,0 +1,39 @@
+c cx            <html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form >
+		Nombre <input type="text" name="Nombre" id="nombre"><br>
+		Apellido <input type="text" name="Apellido" id="apellido"><br>
+		Edad <input type="text" name="Edad" id="edad"><br>
+		<button type="button" name="Enviar" onclick="imprimir()"> ENVIAR </button>
+	</form>
+
+		<p id="nombre_imp"></p>
+		<p id="apellido_imp"></p>
+		<p id="edad_imp"></p>
+
+	<div id="resultado">
+	</div>
+
+
+	<script type="text/javascript">
+
+	  function imprimir() {
+
+	  	var nombre=document.getElementById("nombre").value;
+	  	// document.getElementById("nombre_imp").innerHTML= nombre;
+
+	  	var apellido=document.getElementById("apellido").value;
+	  	// document.getElementById("apellido_imp").innerHTML= apellido;
+
+	  	var edad=document.getElementById("edad").value;
+	  	// document.getElementById("edad_imp").innerHTML= edad;
+	  	document.getElementById("resultado").innerHTML="<br>" + nombre + "<br>" + apellido + "<br>" + edad;
+	   }
+
+	</script>
+</body>
+</html>

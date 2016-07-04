@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+
+<p>fwefew</p>
+<script type="text/javascript">
+	// cada vez que pongamos miString, será igual que si pusiéramos "Hola mundo"
+	var miString = "Hola mundo";
+
+	var miNombre = 'Rosario Rosales Calle';
+
+	// Con split separamos la cadena en base a un carácter para convertirlo en una Array (lista de valores)
+	// Entre las comillas hay un espacio!
+	var miArray = miString.split(" ")//devuelve ["Hola","mundo"]
+
+	var nombreArray = miNombre.split(' ');
+
+	alert(nombreArray[1]);
+
+	//Para acceder a lo que hay en una Array usamos los corchetes indicando la posición.
+	//OJO!, en javascript casi siempre 0 indica el primer item, 1 el segundo, etc.
+	miArray[0] //"Hola"
+	miArray[1] //"mundo"
+
+	// toUpperCase nos devuelve la String en mayúsculas
+	var miStringEnMayusculas = miString.toUpperCase()   \\"HOLA MUNDO"
+	var grande = miNombre.toUpperCase()
+	alert(grande);
+
+
+	// //idexOf devuelve la posición del primer carácter o string que sea igual a lo que pasas a la función
+	// //Si no encuentra nada devuelve -1
+	miString.indexOf("a")//Devuelve 3 (a es el cuarto carácter)
+	
+	// //substring devuelve una cadena que va desde el primer argumento hasta el segundo, o hasta el final si no hay segundo
+	miString.substring(2)//Devuelve "la mundo"
+	miString.substring(1,4)//Devuelve "ola" (sin "h", no es una errata)
+</script>
+	
+</body>
+</html>
+
+
+

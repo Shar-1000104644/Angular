@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body>
+	<div>
+		<!-- {{5+2}} -->
+	</div>
+	<div ng-controller='myCtrl'>
+		Nombre:<input type="text" name="" ng-model='firstName'><br>	
+		Apellido:<input type="text" name="" ng-model='lastName'><br>
+		<br>
+		Nombre:{{fullName()}}
+
+	</div>
+	<script type="text/javascript">
+		var app=angular.module('myApp',[]);
+		
+		app.controller('myCtrl', function($scope){
+			$scope.firstName = 'Rosario';
+			$scope.lastName = 'Rosales';
+			$scope.fullName = function(){
+				return $scope.firstName + ' ' + $scope.lastName;
+			};
+		});
+	</script>
+</body>
+</html>

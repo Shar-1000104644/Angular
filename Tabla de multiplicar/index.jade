@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title TABLA DE MULTIPLICAR
+	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+body.text-center
+	strong
+		h2 #Tabla de multiplicar
+	.operacion
+		p Por favor ingresa un numero
+		input(id="operador" type="text" placeholder="Ingresa tu primera nota" class="btn btn-warning")
+		br
+		br
+		button(onclick="multiplicar()")	Multiplicar
+		br
+		br
+		button(onclick='borrar()') Borrar
+		ul#myList
+	script(type="text/javascript" src="main.js")
+		

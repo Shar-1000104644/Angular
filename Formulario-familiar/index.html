@@ -1,0 +1,52 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form>
+	<h4>Registro de madre</h4>
+		Nombre <input type="text" id="nombre_madre"><br>
+		Apellido <input type="text" id="apellido_madre"><br>
+		Edad <input type="text" id="edad_madre"><br>
+	<h4>Registro de padre</h4>
+		Nombre <input type="text" id="nombre_padre"><br>
+		Apellido <input type="text" id="apellido_padre"><br>
+		Edad <input type="text" id="edad_padre"><br>
+	<h4>Registro de hijo</h4>
+		Nombre <input type="text" id="nombre_hijo"><br>
+		Apellido <input type="text" id="apellido_hijo"><br>
+		Edad <input type="text" id="edad_hijo"><br>
+		<button type="button" name="Enviar" onclick="personas()"> REGISTRAR </button>
+	</form>
+	<div id="resultado">
+	</div>
+	<script type="text/javascript">
+
+	   function personas(nombre,apellido,edad){
+	   	this.nombre='';
+	   	this.apellido='';
+	   	this.edad='';
+
+	   	var nombre_madre=document.getElementById("nombre_madre").value;
+	  	var apellido_madre=document.getElementById("apellido_madre").value;
+	  	var edad_madre=document.getElementById("edad_madre").value;
+
+	  	var nombre_padre=document.getElementById("nombre_padre").value;
+	  	var apellido_padre=document.getElementById("apellido_padre").value;
+	  	var edad_padre=document.getElementById("edad_padre").value;
+
+	  	var nombre_hijo=document.getElementById("nombre_hijo").value;
+	  	var apellido_hijo=document.getElementById("apellido_hijo").value;
+	  	var edad_hijo=document.getElementById("edad_hijo").value;
+
+	   madre = new personas("nombre_madre","apellido_madre","edad_madre");
+	   padre = new personas("nombre_padre","apellido_padre","edad_padre");
+	   hijo =new personas("nombre_hijo","apellido_hijo","edad_hijo");
+
+	  	// document.getElementById("resultado").innerHTML="<br>" + nombre_madre + "<br>" + apellido_madre + "<br>" + edad_madre + "<br>" + nombre_padre + "<br>" + apellido_padre + "<br>" + edad_padre + "<br>" + nombre_hijo + "<br>" + apellido_hijo + "<br>" + edad_hijo;		  	
+	  	document.getElementById("resultado").innerHTML="<br>" + madre + "<br>" + padre + "<br>" + hijo;	
+	   }
+	</script>
+</body>
+</html>

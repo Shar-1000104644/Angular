@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="" style="float:left;">
+      <form >
+        <legend>Form</legend>
+        <br>
+        Name:<input type="text" id="name" value=""><P>
+        LastName:<input type="text" id="lastName" value=""><P>
+        Age:<input type="text" id="age" value=""><P>
+        <input type="button" name="name" value="Send" onclick="handlerData();">
+      </form>
+    </div>
+    <div id="result" style="float:left">
+
+    </div>
+  </body>
+  <script type="text/javascript">
+    function handlerData(){
+      var name=document.getElementById('name').value;
+      var lastName=document.getElementById('lastName').value;
+      var age=document.getElementById('age').value;
+
+      document.getElementById('result').innerHTML="Name:"+name+"<br>"+"lastName:"+lastName+"<br>"+"Age:"+age;
+    }
+  </script>
+</html>

@@ -1,0 +1,86 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form>
+	<h4>Registro de madre</h4>
+		Nombre <input type="text" id="nombre_madre"><br>
+		Apellido <input type="text" id="apellido_madre"><br>
+		Edad <input type="text" id="edad_madre"><br>
+	<h4>Registro de padre</h4>
+		Nombre <input type="text" id="nombre_padre"><br>
+		Apellido <input type="text" id="apellido_padre"><br>
+		Edad <input type="text" id="edad_padre"><br>
+	<h4>Registro de hijo</h4>
+		Nombre <input type="text" id="nombre_hijo"><br>
+		Apellido <input type="text" id="apellido_hijo"><br>
+		Edad <input type="text" id="edad_hijo"><br>
+		<button type="button" name="Enviar" onclick="showInfo()"> REGISTRAR </button>
+	</form>
+	<div id="resultado">
+	</div>
+	<script type="text/javascript">
+
+	  /**
+       * Definición del objeto plantilla persona que puede recibir tres parámetros
+       */
+	   function persona(parnombre,parapellido,paredad){
+		// Atributos del objeto persona
+	   	this.apellido=parapellido;
+	   	this.nombre=parnombre;
+	   	this.edad=paredad;
+
+		// Comportamiento para imprimir datos en HTML
+	   	this.printHtml = function() {
+
+	   		//alert(this.nombre + " " + this.apellido);
+	   		document.getElementById("resultado").innerHTML = document.getElementById("resultado").innerHTML + "<br>" + this.nombre + " " + this.apellido + " " + this.edad;
+	   	};
+	   }
+
+
+	  /**
+       * Método para la generación de los objetos madre, padre e hijo
+       */
+	   function showInfo() {
+
+	   	document.getElementById("resultado").innerHTML = "";
+	   	
+
+	   	// Creación del objeto madre tomando como base a la plantilla persona
+		var madre = new persona();
+		madre.nombre = document.getElementById("nombre_madre").value;
+		madre.apellido = document.getElementById("apellido_madre").value;
+		madre.edad = document.getElementById("edad_madre").value;
+
+		//madre.nombre = "Elizabeth";
+		
+		// Invocación al comportamiento de impresión para madre
+		madre.printHtml();
+
+
+		// Creación del objeto padre tomando como base a la plantilla persona
+        var padre = new persona();
+		padre.nombre = document.getElementById("nombre_padre").value;
+		padre.apellido = document.getElementById("apellido_padre").value;
+		padre.edad = document.getElementById("edad_padre").value;
+
+		// Invocación al comportamiento de impresión para padre
+		padre.printHtml();
+
+		// Creación del objeto hijo tomando como base a la plantilla persona
+		var hijo = new persona();
+		hijo.nombre = document.getElementById("nombre_hijo").value;
+		hijo.apellido = document.getElementById("apellido_hijo").value;
+		hijo.edad = document.getElementById("edad_hijo").value;
+		
+		// Invocación al comportamiento de impresión para hijo
+		hijo.printHtml();
+
+	   }
+
+	</script>
+</body>
+</html>
