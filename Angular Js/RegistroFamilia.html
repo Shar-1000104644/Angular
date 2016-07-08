@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pr&aacute;ctica 2 - JS Objects
+    </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+  </head>
+  <body ng-app='myApp'>
+    <div class="container" ng-controller='uno' >
+      <div class="jumbotron">
+        <h2>Registro de Familiares
+        </h2>
+      </div>
+      <form>
+        <fieldset >
+          <legend>Datos del padre
+          </legend>
+          <span class="help-block">
+            Ingrese los datos personales del padre
+          </span>
+          <div class="form-group">
+            <label for="nombre_padre">
+              Nombre 
+            </label>
+            <input type="text" id="nombre_padre" placeholder="Ingrese el nombre" class="form-control" ng-model='firstNamePadre'>
+          </div>
+          <div class="form-group">
+            <label for="apellido_padre">
+              Apellido 
+            </label>
+            <input type="text" id="apellido_padre" placeholder="Ingrese el apellido" class="form-control" ng-model='lastNamePadre'>
+          </div>
+          <div class="form-group">
+            <label for="edad_padre">
+              Edad 
+            </label>
+            <input type="number" id="edad_padre" placeholder="Ingrese la edad" min="0" max="150" class="form-control" ng-model='agePadre'>
+          </div>
+        </fieldset>
+        <fieldset >
+          <legend>Datos de la madre
+          </legend>
+          <span class="help-block">
+            Ingrese los datos personales de la madre
+          </span>
+          <div class="form-group">
+            <label for="nombre_madre">
+              Nombre 
+            </label>
+            <input type="text" id="nombre_madre" placeholder="Ingrese el nombre" class="form-control" ng-model='firstNameMadre'>
+          </div>
+          <div class="form-group">
+            <label for="apellido_madre">
+              Apellido 
+            </label>
+            <input type="text" id="apellido_madre" placeholder="Ingrese el apellido" class="form-control" ng-model='firstNameMadre'>
+          </div>
+          <div class="form-group">
+            <label for="edad_madre">
+              Edad 
+            </label>
+            <input type="number" id="edad_madre" placeholder="Ingrese la edad" min="0" max="150" class="form-control" ng-model='agePadre'>
+          </div>
+        </fieldset>
+        <fieldset >
+          <legend>Datos del hijo
+          </legend>
+          <span class="help-block">
+            Ingrese los datos personales del hijo
+          </span>
+          <div class="form-group">
+            <label for="nombre_hijo">
+              Nombre 
+            </label>
+            <input type="text" id="nombre_hijo" placeholder="Ingrese el nombre" class="form-control" ng-model='firstNameHijo'>
+          </div>
+          <div class="form-group">
+            <label for="apellido_hijo">
+              Apellido 
+            </label>
+            <input type="text" id="apellido_hijo" placeholder="Ingrese el apellido" class="form-control" ng-model='firstNamePadre' ng-model='firstNameHijo'>
+          </div>
+          <div class="form-group">
+            <label for="edad_hijo">
+              Edad 
+            </label>
+            <input type="number" id="edad_hijo" placeholder="Ingrese la edad" min="0" max="150" class="form-control" ng-model='ageHijo'>
+          </div>
+        </fieldset>
+        <button type="button" onclick="showInfo()" class="btn btn-primary"> Registrar 
+        </button>
+        <button type="reset" class="btn btn-default"> Reiniciar 
+        </button>
+      </form>
+      <div class="page-header">
+        <h2>Resultado de registro
+        </h2>
+      </div>
+      <div class="row">
+        <div id="resultado_padre" class="col-sm-4">
+          <h3>Padre
+          </h3>
+          <p>...
+          </p>
+              Padre:{{padre()}}
+
+        </div>
+        <div id="resultado_madre" class="col-sm-4">
+          <h3>Madre
+          </h3>
+          <p>...
+          </p>
+              Madre:{{madre()}}
+
+        </div>
+        <div id="resultado_hijo" class="col-sm-4">
+          <h3>Hijo
+          </h3>
+          <p>...
+          </p>
+              Hijo:{{hijo()}}
+
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var app=angular.module('myApp',[]);
+    
+      app.controller('uno', function($scope){
+
+      $scope.firstNamePadre = 'Gabriel';
+      $scope.lastNamePadre = 'Garcia';
+      $scope.agePadre=7;
+      $scope.firstNameMadre = 'Rosario';
+      $scope.lastNameMadre = 'Rosales';
+      $scope.ageMadre=7;
+      $scope.firstNameHijo = 'Violeta';
+      $scope.lastNameHijo = 'Rosales';
+      $scope.ageHijo=7;
+
+      $scope.padre = function(){
+        return $scope.firstNamePadre + ' ' + $scope.lastNamePadre + ' ' + $scope.agePadre;
+      };
+
+      $scope.madre = function(){
+        return $scope.firstNameMadre + ' ' + $scope.lastNameMadre + ' ' + $scope.ageMadre;
+        };
+
+      $scope.hijo = function(){
+        return $scope.firstNameHijo + ' ' + $scope.lastNameHijo + ' ' + $scope.ageHijo;
+      };
+    });
+  </script>
+
+  </body>
+</html>
